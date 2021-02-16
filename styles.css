@@ -1,0 +1,23 @@
+#container {
+  height: 420px;
+  width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#container .bg {
+  height: 15px;
+  width: 15px;
+  background-color: silver;
+  margin: 0;
+  padding: 0;
+}
+#container .snake {
+  height: 15px;
+  width: 15px;
+  background-color: red;
+}
+#container .wall {
+  background-color: black;
+  height: 15px;
+  width: 15px;
+}
