@@ -14,7 +14,7 @@
 #container .snake {
   height: 15px;
   width: 15px;
-  background-color: red;
+  background-color: purple;
 }
 #container .wall {
   background-color: black;
