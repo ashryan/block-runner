@@ -1,6 +1,10 @@
 const container = document.getElementById("container")
 let board = []
-let snakePosVal;
+var snakePosVal;
+let score = 0;
+
+let scoreSelector = document.querySelector("#score")
+
 
 const createGrid = () => {
     for(let i = 0; i<784;i++){
@@ -30,7 +34,7 @@ board[snakePos].classList.add('snake')
 
 const moveSnake = (event)  => {
     // board[snakePos].classList.remove('snake')
-    
+  
     
 
     const down = () => {
@@ -38,9 +42,7 @@ const moveSnake = (event)  => {
         board[snakePos].classList.remove('snake')
         snakePos =  snakePos + snakePosVal
         board[snakePos].classList.add('snake')
-
-       
-        }
+    }
 
        
     if(event.keyCode === 40) {
@@ -48,11 +50,13 @@ const moveSnake = (event)  => {
         snakePosVal =  28;
         console.log('down')
          var snakePosInterval = setInterval(down, 300)
+         
         return clearInterval(snakePosInterval)
 
     }else if(event.keyCode === 13){
         snakePosVal = 1;
-        snakePostInterval = setInterval(down, 300)
+        snakePosInterval = setInterval(down, 300)
+        
             
     }else if(event.keyCode === 39) {
         clearInterval(snakePosInterval)
@@ -73,20 +77,48 @@ const moveSnake = (event)  => {
         snakePosVal = -1;
         snakePosInterval = setInterval(down, 300)
         return clearInterval(snakePosInterval)
-    
-        
-    }  
-        
+   }  
     
     
     board[snakePos].classList.add('snake')
-
-
-     
+    return snakePos;
 } 
  
 
+let foodPos = 357;
+
+const drawFood = (event) => {
+   
+
+    if(event.keyCode === 13) {
+    board[foodPos].classList.add('food')
+    }
+} 
 
 
+
+
+const eatFood = (event) => {
+
+    if(event.keyCode === 32 && foodPos == snakePos) {
+       
+        
+        board[foodPos].classList.remove("food")
+    
+        foodPos = Math.floor((Math.random() * 700) )
+    
+        board[foodPos].classList.add("food")
+
+       score++
+       scoreSelector.innerHTML = score;
+
+       
+        
+    }  
+}   
+
+
+document.addEventListener('keyup', eatFood)
+document.addEventListener('keyup', drawFood)
 document.addEventListener('keyup', moveSnake)
 
