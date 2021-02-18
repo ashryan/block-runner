@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  position: fixed;
 }
 #outer-container #console {
   height: 50%;
@@ -42,7 +43,7 @@
   background-color: #EF4423;
 }
 #outer-container #console #container .tail {
-  background-color: #EF4423;
+  background-color: #2A3492;
 }
 #outer-container #console #console-body {
   height: 300px;

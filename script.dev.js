@@ -55,6 +55,7 @@ var moveSnake = function moveSnake(event) {
   if (event.keyCode === 40) {
     snakePosVal = 28;
     console.log('down');
+    event.preventDe;
     var snakePosInterval = setInterval(down, 200);
     return clearInterval(snakePosInterval);
   } else if (event.keyCode === 13) {
