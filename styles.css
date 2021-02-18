@@ -1,26 +1,54 @@
-#container {
+#outer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#outer-container #console {
+  height: 50%;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  background-color: #89939a;
+}
+#outer-container #console #container {
   height: 420px;
   width: 420px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 15px;
 }
-#container .bg {
+#outer-container #console #container .bg {
   height: 15px;
   width: 15px;
-  background-color: silver;
+  background-color: #837e3c;
   margin: 0;
   padding: 0;
 }
-#container .snake {
+#outer-container #console #container .snake {
   height: 15px;
   width: 15px;
-  background-color: purple;
+  background-color: black;
 }
-#container .wall {
+#outer-container #console #container .wall {
   background-color: black;
   height: 15px;
   width: 15px;
 }
-#container .food {
-  background-color: blue;
+#outer-container #console #container .food {
+  background-color: #EF4423;
+}
+#outer-container #console #container .tail {
+  background-color: #EF4423;
+}
+#outer-container #console #console-body {
+  height: 300px;
+  width: 500px;
+  background-color: #89939a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
