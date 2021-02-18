@@ -69,7 +69,7 @@ const moveSnake = (event)  => {
         
         snakePosVal =  28;
         console.log('down')
-        event.preventDe
+        event.preventDefault();
          var snakePosInterval = setInterval(down, 200)
 
 
