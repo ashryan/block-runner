@@ -38,6 +38,7 @@
   background-color: black;
   height: 15px;
   width: 15px;
+  border-radius: 1px;
 }
 #outer-container #console #container .food {
   background-color: #EF4423;

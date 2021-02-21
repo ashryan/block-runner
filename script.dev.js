@@ -79,6 +79,7 @@ var moveSnake = function moveSnake(event) {
   }
 
   board[snakePos].classList.add('snake');
+  console.log(snakePos);
   return snakePos;
 };
 
