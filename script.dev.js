@@ -38,9 +38,8 @@ board[snakePos].classList.add('snake');
 
 var endGameWall = function endGameWall() {
   if (board[snakePos].classList.contains("wall")) {
-    console.log("game over");
     gameOverAnimation();
-    board[snakePos].classList.remove('snake');
+    snakePos = 1;
   }
 };
 
@@ -93,7 +92,10 @@ var drawFood = function drawFood(event) {
 };
 
 var dropBomb = function dropBomb() {
-  board[snakePos].classList.add("tail");
+  var currentPos = snakePos;
+  setTimeout(function () {
+    board[currentPos].classList.add("tail");
+  }, 300);
 };
 
 var gameOverAnimation = function gameOverAnimation() {
@@ -129,7 +131,6 @@ var eatFood = function eatFood(event) {
     //event.keyCode === 32  &&  
     gameOverAnimation();
     snakePos = 1;
-    console.log("game over");
   }
 };
 

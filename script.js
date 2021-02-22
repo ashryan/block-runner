@@ -50,9 +50,8 @@ board[snakePos].classList.add('snake')
 
 const endGameWall = () => {
     if (board[snakePos].classList.contains("wall")){
-        console.log("game over")
         gameOverAnimation()
-        board[snakePos].classList.remove('snake')
+        snakePos = 1
 
     }
 }
@@ -126,7 +125,10 @@ const drawFood = (event) => {
 } 
 
 const dropBomb = () => {
-  board[snakePos].classList.add("tail") 
+    const currentPos = snakePos
+    setTimeout(function() {
+    board[currentPos].classList.add("tail") 
+    },300  )
 
 }
 
@@ -175,7 +177,7 @@ const eatFood = (event) => {
         //event.keyCode === 32  &&  
         gameOverAnimation()
         snakePos = 1;
-        console.log("game over")
+        
     }
 }   
 
