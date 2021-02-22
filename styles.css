@@ -46,6 +46,10 @@
 #outer-container #console #container .tail {
   background-color: #2A3492;
 }
+#outer-container #console #container .black {
+  background-color: black;
+  transition: 3s;
+}
 #outer-container #console #console-body {
   height: 300px;
   width: 500px;

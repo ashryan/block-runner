@@ -35,6 +35,8 @@ const createGrid = () => {
 }
 createGrid()
 
+
+
 console.log(board)
 
 let snakePos = 350;
@@ -48,12 +50,15 @@ board[snakePos].classList.add('snake')
 
 const endGameWall = () => {
     if (board[snakePos].classList.contains("wall")){
-        alert("game over")
+        console.log("game over")
+        gameOverAnimation()
+        board[snakePos].classList.remove('snake')
+
     }
 }
 
 const moveSnake = (event)  => {
-    // board[snakePos].classList.remove('snake')
+    
       
     const down = () => {
     
@@ -127,6 +132,22 @@ const dropBomb = () => {
 
 
 
+const gameOverAnimation = () => {
+
+    for(let i = 29; i < board.length; i++){
+        setTimeout(function() {
+            board[i].classList.add("black")
+             
+        }, 5 * i)
+    }
+  
+    document.getElementById("final-score").innerHTML = `Game Over!
+    Your score is ${score}`
+
+} 
+
+
+
 const eatFood = (event) => {
 
     if( foodPos == snakePos) {
@@ -152,7 +173,9 @@ const eatFood = (event) => {
         
     }  else if(board[snakePos].classList.contains("tail")) {
         //event.keyCode === 32  &&  
-        alert("game over")
+        gameOverAnimation()
+        snakePos = 1;
+        console.log("game over")
     }
 }   
 
