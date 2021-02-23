@@ -43,7 +43,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#outer-container #console #container .snake {
+#outer-container #console #container .char {
   height: 15px;
   width: 15px;
   background-color: black;
@@ -53,10 +53,10 @@ body {
   height: 15px;
   width: 15px;
 }
-#outer-container #console #container .food {
+#outer-container #console #container .orange-square {
   background-color: #EF4423;
 }
-#outer-container #console #container .tail {
+#outer-container #console #container .blue-square {
   background-color: #2A3492;
 }
 #outer-container #console #container .black {

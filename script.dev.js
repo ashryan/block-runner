@@ -2,9 +2,9 @@
 
 var container = document.getElementById("container");
 var board = [];
-var snakePosVal;
+var charPosVal;
 var score = 0;
-var numArr = [];
+var numArr = []; //creates array containing positions for orange squares avoiding walls
 
 for (var i = 1; i < 784; i++) {
   if (i % 28 === 0 || i % 28 === 27 || i <= 27 || i > 756 && i <= 784) {
@@ -33,69 +33,65 @@ var createGrid = function createGrid() {
 
 createGrid();
 console.log(board);
-var snakePos = 350;
-board[snakePos].classList.add('snake');
+var charPos = 350;
+board[charPos].classList.add('char');
 
 var endGameWall = function endGameWall() {
-  if (board[snakePos].classList.contains("wall")) {
+  if (board[charPos].classList.contains("wall")) {
     gameOverAnimation();
-    snakePos = 1;
+    charPos = 1;
   }
 };
 
-var moveSnake = function moveSnake(event) {
+var moveChar = function moveChar(event) {
   var down = function down() {
-    board[snakePos].classList.remove('snake');
-    snakePos = snakePos + snakePosVal;
-    board[snakePos].classList.add('snake');
-    eatFood();
+    board[charPos].classList.remove('char');
+    charPos = charPos + charPosVal;
+    board[charPos].classList.add('char');
+    eatOrange();
     endGameWall();
   };
 
   if (event.keyCode === 40) {
-    snakePosVal = 28;
-    console.log('down');
+    charPosVal = 28;
     event.preventDefault();
-    var snakePosInterval = setInterval(down, 200);
-    return clearInterval(snakePosInterval);
+    var charPosInterval = setInterval(down, 200);
+    return clearInterval(charPosInterval);
   } else if (event.keyCode === 13) {
-    snakePosVal = 1;
-    snakePosInterval = setInterval(down, 200);
+    charPosVal = 1;
+    charPosInterval = setInterval(down, 200);
   } else if (event.keyCode === 39) {
-    clearInterval(snakePosInterval);
-    snakePosVal = 1;
-    snakePosInterval = setInterval(down, 200);
-    return clearInterval(snakePosInterval);
+    clearInterval(charPosInterval);
+    charPosVal = 1;
+    charPosInterval = setInterval(down, 200);
+    return clearInterval(charPosInterval);
   } else if (event.keyCode === 38) {
-    console.log('up');
-    snakePosVal = -28;
-    snakePosInterval = setInterval(down, 200);
-    return clearInterval(snakePosInterval);
+    charPosVal = -28;
+    charPosInterval = setInterval(down, 200);
+    return clearInterval(charPosInterval);
   } else if (event.keyCode === 37) {
-    console.log('left');
-    snakePosVal = -1;
-    snakePosInterval = setInterval(down, 200);
-    return clearInterval(snakePosInterval);
+    charPosVal = -1;
+    charPosInterval = setInterval(down, 200);
+    return clearInterval(charPosInterval);
   }
 
-  board[snakePos].classList.add('snake');
-  console.log(snakePos);
-  return snakePos;
+  board[charPos].classList.add('char');
+  return charPos;
 };
 
 var foodPos = 357;
 
-var drawFood = function drawFood(event) {
+var drawOrange = function drawOrange(event) {
   if (event.keyCode === 13) {
-    board[foodPos].classList.add('food');
+    board[foodPos].classList.add('orange-square');
   }
 };
 
-var dropBomb = function dropBomb() {
-  // added setTimeout to prevent gameover being caused by instantly changing direction when eating food
-  var currentPos = snakePos;
+var dropBlue = function dropBlue() {
+  // added setTimeout to prevent gameover being caused by instantly changing direction when eating orange square
+  var currentPos = charPos;
   setTimeout(function () {
-    board[currentPos].classList.add("tail");
+    board[currentPos].classList.add("blue-square");
   }, 300);
 };
 
@@ -113,28 +109,26 @@ var gameOverAnimation = function gameOverAnimation() {
   document.getElementById("final-score").innerHTML = "Game Over!\n    Your score is ".concat(score);
 };
 
-var eatFood = function eatFood(event) {
-  if (foodPos == snakePos) {
-    // event.keyCode === 32 &&
-    board[foodPos].classList.remove("food");
+var eatOrange = function eatOrange(event) {
+  if (foodPos == charPos) {
+    board[foodPos].classList.remove("orange-square");
     var randomLocation = numArr[Math.floor(Math.random() * numArr.length)];
     foodPos = randomLocation;
 
-    if (board[foodPos].classList.contains("tail")) {
-      board[foodPos].classList.remove("tail");
+    if (board[foodPos].classList.contains("blue-square")) {
+      board[foodPos].classList.remove("blue-square");
     }
 
-    board[foodPos].classList.add("food");
+    board[foodPos].classList.add("orange-square");
     score++;
     scoreSelector.innerHTML = score;
-    dropBomb();
-  } else if (board[snakePos].classList.contains("tail")) {
-    //event.keyCode === 32  &&  
+    dropBlue();
+  } else if (board[charPos].classList.contains("blue-square")) {
     gameOverAnimation();
-    snakePos = 1;
+    charPos = 1;
   }
 };
 
-document.addEventListener('keyup', eatFood);
-document.addEventListener('keyup', drawFood);
-document.addEventListener('keyup', moveSnake);
+document.addEventListener('keyup', eatOrange);
+document.addEventListener('keyup', drawOrange);
+document.addEventListener('keyup', moveChar);
