@@ -92,6 +92,7 @@ var drawFood = function drawFood(event) {
 };
 
 var dropBomb = function dropBomb() {
+  // added setTimeout to prevent gameover being caused by instantly changing direction when eating food
   var currentPos = snakePos;
   setTimeout(function () {
     board[currentPos].classList.add("tail");

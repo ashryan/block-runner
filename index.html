@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -12,13 +17,33 @@
     <div id="outer-container">
       <div id="console">
         <div id="container"></div>
+        <h3 id="wintendo">Wintendo®</h3>
         <h3>Score: <span id="score"></span></h3>
         <h3 id="final-score"></h3>
         <div id="console-body">
           <img id="d-pad" src="assets/hiclipart.com.png" />
+          <div id="right-buttons">
+            <div id="b-button">B</div>
+            <div id="a-button">A</div>
+          </div>
         </div>
       </div>
     </div>
+
+    <section>
+      <h3 class="h2p">How to play!</h3>
+
+      <p>
+        Collect as many orange squares as you can. <br />
+        Watch out, collected orange squares will turn blue and must be avoided!
+      </p>
+
+      <ul>
+        <li>Press enter to start</li>
+        <li>Use your arrow keys to move</li>
+        <li>Avoid blue squares and the walls!</li>
+      </ul>
+    </section>
 
     <script src="script.js" type="module"></script>
   </body>

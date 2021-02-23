@@ -125,6 +125,7 @@ const drawFood = (event) => {
 } 
 
 const dropBomb = () => {
+    // added setTimeout to prevent gameover being caused by instantly changing direction when eating food
     const currentPos = snakePos
     setTimeout(function() {
     board[currentPos].classList.add("tail") 
