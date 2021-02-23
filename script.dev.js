@@ -4,7 +4,8 @@ var container = document.getElementById("container");
 var board = [];
 var charPosVal;
 var score = 0;
-var numArr = []; //creates array containing positions for orange squares avoiding walls
+var numArr = [];
+var charPos = 350; //creates array containing positions for orange squares avoiding walls
 
 for (var i = 1; i < 784; i++) {
   if (i % 28 === 0 || i % 28 === 27 || i <= 27 || i > 756 && i <= 784) {
@@ -32,8 +33,6 @@ var createGrid = function createGrid() {
 };
 
 createGrid();
-console.log(board);
-var charPos = 350;
 board[charPos].classList.add('char');
 
 var endGameWall = function endGameWall() {

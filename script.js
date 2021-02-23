@@ -3,7 +3,9 @@ let board = []
 var charPosVal;
 let score = 0;
 let numArr = []
- 
+let charPos = 350;
+
+
 //creates array containing positions for orange squares avoiding walls
 for(let i = 1; i < 784; i++) {
     if (i % 28 === 0 || i % 28 === 27 || i <= 27 || i >756 && i <= 784) {continue;}
@@ -34,20 +36,10 @@ const createGrid = () => {
         } 
     } 
 }
+
 createGrid()
 
-
-
-console.log(board)
-
-let charPos = 350;
-
-
-
 board[charPos].classList.add('char')
-
-
-
 
 const endGameWall = () => {
     if (board[charPos].classList.contains("wall")){
@@ -120,6 +112,7 @@ const drawOrange = (event) => {
 
     if(event.keyCode === 13) {
     board[foodPos].classList.add('orange-square')
+    
     }
 } 
 

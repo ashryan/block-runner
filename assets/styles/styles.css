@@ -1,0 +1,115 @@
+body {
+  background-color: #e3f2fd;
+}
+
+#outer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}
+#outer-container #wintendo {
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#outer-container #console {
+  height: 50%;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  background-color: #512da8;
+  font-family: "Press Start 2P", cursive;
+}
+#outer-container #console #final-score {
+  font-size: 18px;
+}
+#outer-container #console #container {
+  height: 420px;
+  width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+#outer-container #console #container .bg {
+  height: 15px;
+  width: 15px;
+  background-color: #837e3c;
+  margin: 0;
+  padding: 0;
+}
+#outer-container #console #container .char {
+  height: 15px;
+  width: 15px;
+  background-color: black;
+}
+#outer-container #console #container .wall {
+  background-color: black;
+  height: 15px;
+  width: 15px;
+}
+#outer-container #console #container .orange-square {
+  background-color: #EF4423;
+}
+#outer-container #console #container .blue-square {
+  background-color: #2A3492;
+}
+#outer-container #console #container .black {
+  background-color: black;
+  transition: 3s;
+}
+#outer-container #console #console-body {
+  height: 300px;
+  width: 500px;
+  background-color: #512da8;
+  display: flex;
+  align-items: center;
+}
+#outer-container #console #console-body #d-pad {
+  height: 125px;
+  margin-left: 80px;
+  margin-bottom: 70px;
+}
+#outer-container #console #console-body #right-buttons {
+  width: 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 60px;
+}
+#outer-container #console #console-body #right-buttons #b-button {
+  height: 30px;
+  width: 30px;
+  color: gray;
+  text-align: center;
+  box-shadow: 2px 2px 2px #858080;
+  border: 2px solid black;
+  margin-right: 23px;
+  border-radius: 30px;
+  background-color: black;
+  font-family: sans-serif;
+}
+#outer-container #console #console-body #right-buttons #a-button {
+  height: 30px;
+  width: 30px;
+  color: grey;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px #858080;
+  background-color: black;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 20px;
+}
