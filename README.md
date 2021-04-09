@@ -1,5 +1,5 @@
 <h1>Block Runner</h1>
-<p>A browser based0 Javascript game.</p>
+<p>A browser based Javascript game.</p>
 <a href="https://ashryan.github.io/blockrunner/">Live Site</a>
 <img src="./assets/images/block-runner.png">
 
