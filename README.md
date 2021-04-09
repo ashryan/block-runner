@@ -1,6 +1,6 @@
 <h1>Block Runner</h1>
 <p>A browser based0 Javascript game.</p>
-<a href="https://ashryan.github.io/calculator/">live site</a>
+<a href="https://ashryan.github.io/blockrunner/">Live Site</a>
 <img src="./assets/images/block-runner.png">
 
 
